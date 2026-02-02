@@ -293,9 +293,7 @@ impl EncryptionState {
         nonce[..8].copy_from_slice(&sequence.to_le_bytes());
         let salt_bytes = self.connection_salt.to_le_bytes();
         // Mix connection salt into nonce bytes 8..12 to differentiate connections
-        for i in 0..4 {
-            nonce[8 + i] = salt_bytes[i];
-        }
+        nonce[8..12].copy_from_slice(&salt_bytes[..4]);
         nonce
     }
 }

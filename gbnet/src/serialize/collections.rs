@@ -70,7 +70,10 @@ impl ByteAlignedDeserialize for String {
         if len > MAX_DESERIALIZE_LENGTH {
             return Err(io::Error::new(
                 io::ErrorKind::InvalidData,
-                format!("String length {} exceeds max {}", len, MAX_DESERIALIZE_LENGTH),
+                format!(
+                    "String length {} exceeds max {}",
+                    len, MAX_DESERIALIZE_LENGTH
+                ),
             ));
         }
         let mut bytes = vec![0u8; len];
