@@ -102,4 +102,4 @@ tests/fixtures/generated/
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw?CLAUDE.md
