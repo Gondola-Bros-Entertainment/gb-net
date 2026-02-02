@@ -1,16 +1,15 @@
 <div align="center">
 <h1>GB-Net</h1>
-
-**High-Performance Game Networking for Rust**
-
-Bitpacked serialization. Reliable UDP transport. Built for real-time.
-
-[Quick Start](#quick-start) · [Delivery Modes](#delivery-modes) · [Serialization](#serialization-attributes) · [Architecture](#architecture)
+<p><strong>High-Performance Game Networking for Rust</strong></p>
+<p>Bitpacked serialization. Reliable UDP transport. Built for real-time.</p>
+<p><a href="#quick-start">Quick Start</a> · <a href="#delivery-modes">Delivery Modes</a> · <a href="#serialization-attributes">Serialization</a> · <a href="#architecture">Architecture</a></p>
+<p>
 
 [![CI](https://github.com/gondola-bros-entertainment/GB-Net/actions/workflows/ci.yml/badge.svg)](https://github.com/gondola-bros-entertainment/GB-Net/actions/workflows/ci.yml)
 ![Rust](https://img.shields.io/badge/rust-stable-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+</p>
 </div>
 
 ---
