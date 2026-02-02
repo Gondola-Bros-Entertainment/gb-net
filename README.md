@@ -5,7 +5,7 @@
 <p><a href="#quick-start">Quick Start</a> · <a href="#delivery-modes">Delivery Modes</a> · <a href="#serialization-attributes">Serialization</a> · <a href="#architecture">Architecture</a></p>
 <p>
 
-[![CI](https://github.com/gondola-bros-entertainment/GB-Net/actions/workflows/ci.yml/badge.svg)](https://github.com/gondola-bros-entertainment/GB-Net/actions/workflows/ci.yml)
+[![CI](https://github.com/aoinoikaz/gbnet/actions/workflows/ci.yml/badge.svg)](https://github.com/aoinoikaz/gbnet/actions/workflows/ci.yml)
 ![Rust](https://img.shields.io/badge/rust-stable-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
@@ -34,8 +34,8 @@ Game Code                    GB-Net                      Wire
 
 ```toml
 [dependencies]
-gbnet = { git = "https://github.com/gondola-bros-entertainment/GB-Net.git" }
-gbnet_macros = { git = "https://github.com/gondola-bros-entertainment/GB-Net.git" }
+gbnet = { git = "https://github.com/aoinoikaz/gbnet.git" }
+gbnet_macros = { git = "https://github.com/aoinoikaz/gbnet.git" }
 ```
 
 ### Server
@@ -358,5 +358,5 @@ Contributions welcome. Run `cargo test && cargo clippy -- -W clippy::all && carg
 ---
 
 <p align="center">
-  <sub>MIT License · Built by <a href="https://github.com/gondola-bros-entertainment">GondolaBros</a> · A <a href="https://novavero.ai">Novavero AI</a> project</sub>
+  <sub>MIT License · Built by <a href="https://github.com/aoinoikaz">GondolaBros</a></sub>
 </p>
