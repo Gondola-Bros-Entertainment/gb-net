@@ -6,7 +6,6 @@ use smallvec::SmallVec;
 use std::collections::HashMap;
 use std::time::{Duration, Instant};
 
-
 pub const INITIAL_RTO_MILLIS: u64 = 100;
 pub const ACK_BITS_WINDOW: u16 = 32;
 pub const RTT_ALPHA: f64 = 0.125;
