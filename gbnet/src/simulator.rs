@@ -36,10 +36,10 @@ impl NetworkSimulator {
     /// Process an outgoing packet through the simulator.
     /// Returns packets ready for immediate delivery, or buffers them for delayed delivery.
     pub fn process_send(&mut self, data: &[u8], addr: SocketAddr) -> Vec<(Vec<u8>, SocketAddr)> {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
         let mut result = Vec::new();
 
-        if self.config.packet_loss > 0.0 && rng.gen::<f32>() < self.config.packet_loss {
+        if self.config.packet_loss > 0.0 && rng.random::<f32>() < self.config.packet_loss {
             return result;
         }
 
@@ -53,16 +53,16 @@ impl NetworkSimulator {
 
         let base_latency = self.config.latency_ms as f64;
         let jitter = if self.config.jitter_ms > 0 {
-            rng.gen_range(0.0..self.config.jitter_ms as f64)
+            rng.random_range(0.0..self.config.jitter_ms as f64)
         } else {
             0.0
         };
         let delay_ms = base_latency + jitter;
 
         let extra = if self.config.out_of_order_chance > 0.0
-            && rng.gen::<f32>() < self.config.out_of_order_chance
+            && rng.random::<f32>() < self.config.out_of_order_chance
         {
-            rng.gen_range(0.0..50.0)
+            rng.random_range(0.0..50.0)
         } else {
             0.0
         };
@@ -80,8 +80,8 @@ impl NetworkSimulator {
             });
         }
 
-        if self.config.duplicate_chance > 0.0 && rng.gen::<f32>() < self.config.duplicate_chance {
-            let dup_delay = Duration::from_millis((delay_ms + rng.gen_range(0.0..20.0)) as u64);
+        if self.config.duplicate_chance > 0.0 && rng.random::<f32>() < self.config.duplicate_chance {
+            let dup_delay = Duration::from_millis((delay_ms + rng.random_range(0.0..20.0)) as u64);
             self.delayed_packets.push_back(DelayedPacket {
                 data: data.to_vec(),
                 addr,
